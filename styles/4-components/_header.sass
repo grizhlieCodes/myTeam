@@ -1,0 +1,127 @@
+@use '../1-helpers/mixins' as *
+
+header
+    height: 12.8rem
+    @include grid(". test .")
+
+    @include mq(tablet)
+        height: 17.6rem
+    
+    @include mq(desktop)
+        height: 19.4rem
+
+    .header-inner-width-container
+        grid-column: 2/3
+        @include flex(row nowrap, space-between, center)
+
+        @include mq(desktop)
+            grid-column: 3/4
+
+    .nav-burger-button
+        width: 2rem
+        height: 2rem
+        @include flex(column nowrap, center, center)
+        transform: translateY(-0.3rem)
+        cursor: pointer
+        z-index: 10
+
+        @include mq(tablet)
+            display: none
+
+        .nav-button-line
+            width: 100%
+            height: 3px
+            background: v(white)
+            transform-origin: 0px 1px
+            transform: none
+            transition: 250ms all ease
+            opacity: 1
+
+            &:not(:nth-child(3))
+                margin-bottom: 0.4rem
+
+            &.active
+                &:nth-child(1)
+                    transform: rotate(45deg)
+                &:nth-child(2)
+                    transform: scale(0.1, 0.1)
+                    opacity: 0
+                &:nth-child(3)
+                    transform: rotate(-45deg)
+
+    nav
+        position: fixed
+        top: 0
+        right: 0
+        height: 100vh
+        width: 25.5rem
+        background: v(police-blue)
+        padding-top: 11.2rem
+        z-index: 5
+        transform: translate(100%, 0)
+        transition: all 250ms ease
+        @include flex(column nowrap, flex-start, center)
+
+        &.active
+            transform: translate(0, 0)
+
+        @include mq(tablet)
+            flex: 1 0 auto
+            position: static
+            height: auto
+            width: auto
+            background: transparent
+            padding-top: 0
+            z-index: 0
+            transform: none
+            transition: none
+            @include flex(row nowrap, flex-start, center)
+        
+
+    .link-container
+        @include flex(column nowrap, flex-start, center)
+        flex: 0 0 auto
+
+        @include mq(tablet)
+            @include flex(row nowrap, flex-start, center)
+            flex: 1 0 auto
+            margin-left: 4.8rem
+        
+        @include mq(desktop)
+            margin-left: 8rem
+
+        a:nth-child(1)
+            margin-bottom: 2.4rem
+            @include mq(tablet)
+                margin-bottom: 0
+                margin-right: 4rem
+
+        a:nth-child(2)
+            margin-bottom: 3.6rem
+            @include mq(tablet)
+                margin-bottom: 0
+
+    .img-container 
+        position: absolute
+        bottom: 0
+        right: 0
+        transform: translate(50%, 0%)
+
+        @include mq(tablet)
+            display: none
+
+    .backdrop
+        @include abCenter(fixed)
+        background: #000
+        opacity: 0
+        transform: translate(100%,0%)
+        transition: opacity 250ms ease
+
+        @include mq(tablet)
+            display: none
+        
+        &.active
+            opacity: 0.5
+            transform: translate(0%,0%)
+            
+

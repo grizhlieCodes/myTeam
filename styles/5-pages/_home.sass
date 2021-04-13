@@ -1,0 +1,299 @@
+@use '../1-helpers/mixins' as *
+
+section.home-hero
+    position: relative
+    height: 43.9rem
+    @include grid(". flexContainer .")
+    text-align: center
+
+    @include mq(tablet)
+        height: 52.4rem
+
+    @include mq(desktop)
+        height: 50.6rem
+        grid-template-areas: ". . flexContainer . ."
+        text-align: left
+
+
+    .flex-container
+        width: 100%
+        height: 21rem
+        grid-area: flexContainer
+        @include flex(column nowrap, space-between, center)
+        margin-top: 3.2rem
+        position: relative
+
+        @include mq(tablet)
+            margin-top: 4.8rem
+            min-height: 22rem
+
+        @include mq(desktop)
+            min-height: 20rem
+            margin-top: 5.6rem
+            width: 111rem
+            @include eflex(0,space-between,flex-start)
+
+
+        h1
+            @include mq(tablet)
+                width: clamp(36.5rem, 36.5rem + 5vw, 95rem)
+                margin-bottom: clamp(1px, 1vw , 2rem)
+
+            @include mq(desktop)
+                margin-bottom: 0
+                width: 53rem
+
+            span
+                color: v(coral)
+        
+        .text-container
+            max-width: 45.7rem
+
+            @include mq(desktop)
+                height: 18.9rem
+                @include flex(column nowrap, space-between, flex-start) 
+                width: 44.5rem
+                // padding-bottom: 2rem
+
+        
+        span.deco-line
+            width: 5rem
+            height: 0.4rem
+            background: v(rapture-blue)
+
+    .img-container.left
+        display: none
+
+        @include mq(desktop)
+            display: block
+            grid-column: 3/4
+            position: absolute
+            top: 55px
+            transform: translateX(-132%)
+    
+    .img-container.bottom
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        transform: translate(0%, 0%)
+
+        @include mq(desktop)
+            grid-column: 3/4
+            left: unset
+
+section.home-features
+    overflow-x: hidden
+    height: 107.3rem
+    background: v(state-green)
+    padding: 6.4rem 2.4rem
+
+    @include mq(tablet)
+        height: 71rem
+        padding: 10rem 9.8rem
+
+    @include mq(desktop)
+        height: 68.4rem
+        padding: 14rem 0
+
+    .flex-container
+        height: 100%
+        margin: auto
+        width: 100%
+        max-width: 32.7rem
+        position: relative
+        @include flex(column nowrap, space-between, baseline)
+
+        @include mq(tablet)
+            max-width: 57.2rem
+
+        @include mq(desktop)
+            max-width: 111rem
+            @include eflex(row nowrap, space-between, start)
+
+        
+    .flex-container
+
+        .bg-img-container
+            position: absolute
+            right: calc(-46% + 2.4rem)
+            top: calc(0% - 6.4rem)
+
+            @include mq(tablet)
+                right: calc(-52% + 9.8rem)
+                top: calc(0% - 10rem)
+
+            @include mq(desktop)
+                right: calc(0% - 16.5rem)
+                transform: translate(50%,0)
+                top: unset
+                bottom: calc(0% - 14rem)
+    
+        .heading-container
+            height: 19.6rem
+            width: 20.7rem
+            @include flex(column nowrap, space-between, baseline)
+
+            @include mq(tablet)
+                width: 44.5rem
+                height: 10rem
+            
+            @include mq(desktop)
+                height: 20.2rem
+                width: 44.5rem
+            span 
+                height: 0.4rem
+                width: 5rem
+                background: v(coral)
+
+        
+        .features
+            @include flex(column nowrap, space-between, center)
+            flex: 1 0 auto
+            max-height: 69.3rem
+
+            @include mq(tablet)
+                max-height: 34.6rem
+
+            @include mq(desktop)
+                height: 34.6rem
+                max-width: 54rem
+                margin-top: 5.8rem
+
+        .feature-card
+            text-align: center
+            flex: 0 0 19.9rem
+            @include flex(column nowrap, space-between, center)
+
+            @include mq(tablet)
+                text-align: left
+                flex: 0 0 9.4rem
+                @include eflex(row nowrap, space-between, center)
+
+
+            .img-container
+                width: 7.2rem
+                height: 7.2rem
+
+                @include mq(tablet)
+                    margin-right: 2.3rem
+
+            h3 
+                color: v(coral)
+                margin-bottom: 0.8rem
+
+                @include mq(tablet)
+                    margin-bottom: 1.6rem
+
+section.home-testimonials
+    height: 141rem
+    padding: 14rem 2.4rem 16.2rem
+    text-align: center
+    background: v(jungle-green)
+    position: relative
+
+    .bg-img-container.top
+        position: absolute
+        left: 0
+        top: 0
+        // transform: translate(calc(-375px/2), 0)
+    
+    .bg-img-container.bottom
+        position: absolute
+        right: 0
+        bottom: 0
+
+    @include mq(tablet)
+        height: 119.9rem
+        padding: 10rem 5.4rem
+
+        .bg-img-container.bottom
+            // transform: translate(calc(-705px/2), 0)
+
+    @include mq(desktop)
+        height: 74.5rem
+        padding: 14rem 0
+
+        .bg-img-container.top
+            left: 50%
+            transform: translate(calc(-1440px/2), 0)
+        
+        .bg-img-container.bottom
+            right: 50%
+            transform: translate(calc(1440px/2), 0)
+
+    .header-container
+        margin: auto
+        margin-bottom: 4.8rem
+
+        span
+            color: v(rapture-blue)
+
+        @include mq(tablet)
+            max-width: 57.3rem
+
+        @include mq(desktop)
+            height: 9.6rem
+            margin-bottom: 5.6rem
+            max-width: 111rem
+
+    .testimonials
+        width: 32.7rem
+        margin: auto
+        @include flex(column nowrap, space-between, center)
+
+        @include mq(desktop)
+            @include eflex(row nowrap, space-between, start)
+            width: 100%
+            max-width: 111rem
+
+    .testimonials
+
+        .testimonial
+            @include flex(column nowrap, space-between, center)
+            height: 27.8rem
+            position: relative
+
+            &:not(:nth-last-child(1))
+                margin-bottom: 4.8rem
+
+            @include mq(tablet)
+                height: 25.3rem
+                width: 57.3rem
+
+            @include mq(desktop)
+                height: 31.3rem
+                width: 35rem
+
+       
+        .testimonial
+
+            .main-text-container
+                height: 13.6rem
+                @include flex(column nowrap, flex-end, center)
+                margin-bottom: 1.3rem
+
+                .quotation-mark
+                    top: 0
+                    position: absolute
+                    left: 50%
+                    transform: translate(-50%,0)
+                    z-index: -1
+      
+            h3.name
+                color: v(rapture-blue)
+                margin-bottom: 0.2rem
+
+            p.title
+                margin-bottom: 1.4rem
+
+            .portrait-container
+                width: 6.2rem
+                height: 6.2rem
+                overflow: hidden
+                border-radius: 50%
+                border: solid 2px #C4FFFE
+                margin: auto
+
+                img
+                    width: 100%

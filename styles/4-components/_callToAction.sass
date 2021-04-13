@@ -1,0 +1,40 @@
+@use '../1-helpers/mixins' as *
+
+.call-to-action__pre-footer
+    width: 100%
+    height: 30.2rem
+    background: v(coral)
+    display: grid
+    place-items: center
+    position: relative
+    overflow: hidden
+
+    @include mq(tablet)
+        height: 20rem
+
+    .text-container
+        @include flex(column nowrap, space-between, center)
+        height: 13.6rem
+        width: 32.7rem
+        text-align: center
+
+        @include mq(tablet)
+            height: 4.8rem
+            width: 57.3rem
+            @include eflex(row nowrap, space-between, center)
+            height: 20rem
+
+        @include mq(desktop)
+            width: 91.7rem
+            
+        h2
+            color: v(state-green)
+
+    .bg-img-container
+        position: absolute
+        bottom: -2.3rem
+        left: 0
+
+        @include mq(desktop)
+            left: 50%
+            transform: translate(calc(-1440px/2),0)

@@ -1,0 +1,100 @@
+@mixin flex($flow, $justify, $align) {
+  display: flex;
+  @if ($flow == 0) {
+    flex-flow: row nowrap;
+  } @else {
+    flex-flow: $flow;
+  }
+  @if ($justify == 0) {
+    justify-content: center;
+  } @else {
+    justify-content: $justify;
+  }
+  @if ($align == 0) {
+    align-items: center;
+  } @else {
+    align-items: $align;
+  }
+}
+
+@mixin eflex($flow, $justify, $align) {
+  @if ($flow == 0) {
+    flex-flow: row nowrap;
+  } @else {
+    flex-flow: $flow;
+  }
+  @if ($justify == 0) {
+    justify-content: center;
+  } @else {
+    justify-content: $justify;
+  }
+  @if ($align == 0) {
+    align-items: center;
+  } @else {
+    align-items: $align;
+  }
+}
+
+@function v($var) {
+  @return var(--#{$var});
+}
+
+$mobile: 375;
+$tablet: 768;
+$desktop: 1100;
+
+@function sizer($size){
+  @return #{$size}px
+}
+
+@mixin mq($size) {
+
+  @if ($size == tablet) {
+    @media screen and (min-width: #{$tablet}px) {
+      @content;
+    }
+  }
+  @if ($size == desktop) {
+    @media screen and (min-width: #{$desktop}px) {
+      @content;
+    }
+  }
+}
+
+//::Button Border
+@mixin buttonBorder($col) {
+  $light: v(white);
+  $dark: v(state-green);
+
+  @if $col == light {
+    border: 2px solid $light;
+  } @else if $col == dark {
+    border: 2px solid $dark;
+  }
+}
+
+//::Custom grid for every section/area of our website. Easy to control
+//::everything.
+
+@mixin grid($gridAreas) {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2.4rem 1fr 2.4rem;
+  grid-template-areas: "#{$gridAreas}";
+
+  @include mq(tablet) {
+    grid-template-columns: 4rem 1fr 4rem;
+  }
+
+  @include mq(desktop) {
+    grid-template-columns: 1fr minmax(0px, 165px) minmax(1000px, 1110px) minmax(0px,165px) 1fr;
+  }
+}
+
+@mixin abCenter($position) {
+  position: $position;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

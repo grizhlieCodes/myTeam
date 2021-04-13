@@ -1,0 +1,115 @@
+@use '../1-helpers/mixins' as *;
+
+$font-family: 'Livvic', sans-serif;
+
+
+
+
+
+$fonts: (
+    "h1.large": (
+        "font-family": $font-family,
+        "color": v(white),
+        "font-size": clamp(4rem, 1.8rem + 6vw, 10rem),
+        "line-height": clamp(4rem, 7.3vw ,10rem),
+        "font-weight": 700,
+        "mediaQueries": (
+            "tablet": (
+                "font-size": 6.4rem,
+                "line-height": 5.6rem
+            ),
+            "desktop": (
+                "font-size": 10rem,
+                "line-height": 10rem
+            ),
+        ),
+    ),
+    
+    "h1.small": (
+        "font-family": $font-family,
+        "color": v(white),
+        "font-size": 4rem,
+        "line-height": 4rem,
+        "font-weight": 700,
+        "mediaQueries": (
+            "tablet": (
+                "font-size": 6.4rem,
+                "line-height": 5.6rem
+            ),
+            "desktop": (
+                "font-size": 6.4rem,
+                "line-height": 10rem
+            ),
+        ),
+    ),
+
+    "h2": (
+        "font-family": $font-family,
+        "color": v(white),
+        "font-size": 3.2rem,
+        "line-height": 3.2rem,
+        "font-weight": 700,
+        "mediaQueries": (
+            "tablet": (
+                "font-size": 3.2rem,
+                "line-height": 3.2rem
+            ),
+            "desktop": (
+                "font-size": 4.8rem,
+                "line-height": 4.8rem
+            )
+        )
+    ),
+
+    "h3": (
+        "font-family": $font-family,
+        "color": v(white),
+        "font-size": 1.8rem,
+        "line-height": 2.8rem,
+        "font-weight": 700
+    ),
+
+    "p.body-1": (
+        "font-family": $font-family,
+        "color": v(white),
+        "font-size": clamp(1.5rem, 1rem + 0.65vw, 1.8rem),
+        "line-height": 2.8rem,
+        "font-weight": 600
+    ),
+
+    "p.body-2": (
+        "font-family": $font-family,
+        "color": v(white),
+        "font-size": 1.5rem,
+        "line-height": 2.5rem,
+        "font-weight": 600
+    ),
+    "p.title": (
+        "font-family": $font-family,
+        "color": v(white),
+        "font-style": italic,
+        "font-size": 1.3rem,
+        "line-height": 1.8rem,
+        "font-weight": 500
+    ),
+
+    "a": (
+        "font-family": $font-family,
+        "color": v(white),
+        "font-size": 1.8rem,
+        "line-height": 2.8rem,
+        "font-weight": 600,
+        "text-decoration": none,
+        "transition": all 250ms ease,
+
+        "extraSelectors": (
+            "hover": (
+                "color": v(coral),
+            ),
+            ":before": (
+                "content": '',
+                "background": v(white)
+            )
+        )
+    ),
+)

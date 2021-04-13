@@ -1,0 +1,45 @@
+@use '../2-base/colorMap' as *;
+@use '../2-base/fontMap' as *;
+@use '../1-helpers/mixins' as *;
+
+:root {
+  @each $type, $coloors in $colors {
+    @each $color, $value in $coloors {
+      --#{$color}: #{$value};
+    }
+  }
+}
+
+@each $selector, $properties in $fonts {
+  #{$selector} {
+    @each $property, $value in $properties {
+      @if ($property != "extraSelectors" and $property != "mediaQueries") {
+        #{$property}: $value;
+      }
+    }
+  }
+  @each $property, $extraSelectors in $properties {
+    @if ($property == "extraSelectors") {
+      @each $extraSelector, $extraProps in $extraSelectors {
+        #{$selector}:#{$extraSelector} {
+          @each $extraProp, $extraVal in $extraProps {
+            #{$extraProp}: $extraVal;
+          }  
+        }
+      }
+    }
+  }
+  @each $property, $mediaQueries in $properties {
+    @if ($property == "mediaQueries") {
+      @each $mediaQuery, $mediaProps in $mediaQueries {
+        @include mq($mediaQuery) {
+          #{$selector} {
+            @each $mediaProp, $mediaValue in $mediaProps {
+              #{$mediaProp}: $mediaValue;
+            }
+          }
+        }
+      }
+    }
+  } 
+}

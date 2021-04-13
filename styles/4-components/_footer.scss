@@ -1,0 +1,143 @@
+@use '../1-helpers/mixins' as *;
+
+footer {
+  width: 100%;
+  height: 43.2rem;
+  display: grid;
+  place-items: center;
+  background: v(dark-green);
+
+  @include mq(tablet) {
+    height: 27.1rem;
+  }
+  @include mq(desktop) {
+    height: 19.6rem;
+  }
+}
+
+footer .inner-container {
+  width: 32.7rem;
+  height: 30.2rem;
+  text-align: center;
+  display: grid;
+  align-content: space-between;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2.4rem 2.5rem 11.5rem 2.4rem 2.5rem;
+  grid-template-areas:
+    "logo"
+    "nav"
+    "info"
+    "socialIcons"
+    "copyright";
+
+  @include mq(tablet) {
+    text-align: left;
+    width: 68.9rem;
+    height: 15.9rem;
+    align-content: start;
+    justify-content: space-between;
+    grid-template-columns: 15rem 1fr;
+    grid-template-rows: 7.7rem 2.5rem 3.3rem 2.4rem;
+    grid-template-areas:
+      "logo info"
+      "nav info"
+      ". ."
+      "socialIcons copyright";
+  }
+
+  @include mq(desktop){
+    width: 111rem;
+    height: 10rem;
+    align-content: start;
+    justify-content: start;
+    grid-template-columns: 20rem 1fr 1fr;
+    grid-template-rows: 4rem 6rem;
+    grid-template-areas: 
+    "logo info socialIcons"
+    "nav info copyright"
+    ;
+  }
+
+}
+
+footer .inner-container {
+
+  img#logo {
+    grid-area: logo;
+    width: 9.597rem;
+  }
+
+  nav{
+    @include mq(desktop){
+      align-self: end;
+    }
+  }
+
+  nav a:nth-child(1) {
+    grid-area: nav;
+    margin-right: 2.4rem;
+  }
+
+  .contact-info {
+    grid-area: info;
+    color: v(white);
+    opacity: 0.6;
+
+    @include mq(tablet) {
+      text-align: right;
+    }
+
+    @include mq(desktop) {
+      text-align: left;
+      justify-self: start;
+      align-self: start;
+    }
+
+  }
+
+  .social-media-icons {
+    grid-area: socialIcons;
+    @include flex(row nowrap, center, center);
+
+    .icon-container:not(:nth-last-child(1)) svg {
+      margin-right: 1.6rem;
+    }
+
+    .icon-container {
+      cursor: pointer;
+      svg:hover {
+        path{
+          fill: v(coral);
+        }
+      }
+    }
+
+    @include mq(tablet) {
+      justify-content: flex-start;
+      text-align: left;
+    }
+
+    @include mq(desktop) {
+      justify-self: end;
+      align-self: start;
+    }
+
+  }
+
+ 
+
+  .copyright {
+    grid-area: copyright;
+    opacity: 0.6;
+
+    @include mq(tablet) {
+      text-align: right;
+    }
+    @include mq(desktop) {
+      justify-self: end;
+      align-self: end;
+    }
+
+  }
+
+}
