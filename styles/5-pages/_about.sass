@@ -79,10 +79,12 @@ section.directors
     padding: 8.8rem 2.4rem
 
     @include mq(tablet)
+        padding: 10rem 9.8rem 14rem 9.7rem
         height: 121.9rem
 
     @include mq(desktop)
         height: 100.2rem
+        padding: 14rem 0
 
     .directors-grid
         display: grid
@@ -94,9 +96,11 @@ section.directors
         @include mq(tablet)
             grid-template-columns: repeat(2, 28.1rem)
             column-gap: 1.1rem
-            row-gap: 4.8rem
+            row-gap: 7.6rem
 
         @include mq(desktop)
+            column-gap: 3rem
+            // row-gap: 7.6rem
             grid-template-columns: repeat(3, 35rem)
             grid-auto-flow: row
 
@@ -110,6 +114,7 @@ section.directors
             grid-column: 1/3
         @include mq(desktop)
             grid-column: 1/4
+            margin-bottom: 6.4rem
 
     .director-card
         width: 100%
@@ -184,6 +189,10 @@ section.directors
             height: 2rem
             @include flex(row nowrap, space-between, 0)
 
+            a:hover path
+                cursor: pointer
+                fill: v(coral)
+
     .director-card__button
         width: 5.6rem
         height: 5.6rem
@@ -213,9 +222,7 @@ section.directors
 
             &:nth-child(2)
                 transform: translate(-50%, -50%) rotate(90deg)
-
-
-section.directors   
+  
     .bg-img-container.top
         width: 20rem
         height: 20rem

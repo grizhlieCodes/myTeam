@@ -1113,12 +1113,14 @@ section.directors {
 }
 @media screen and (min-width: 768px) {
   section.directors {
+    padding: 10rem 9.8rem 14rem 9.7rem;
     height: 121.9rem;
   }
 }
 @media screen and (min-width: 1100px) {
   section.directors {
     height: 100.2rem;
+    padding: 14rem 0;
   }
 }
 section.directors .directors-grid {
@@ -1132,11 +1134,12 @@ section.directors .directors-grid {
   section.directors .directors-grid {
     grid-template-columns: repeat(2, 28.1rem);
     column-gap: 1.1rem;
-    row-gap: 4.8rem;
+    row-gap: 7.6rem;
   }
 }
 @media screen and (min-width: 1100px) {
   section.directors .directors-grid {
+    column-gap: 3rem;
     grid-template-columns: repeat(3, 35rem);
     grid-auto-flow: row;
   }
@@ -1154,6 +1157,7 @@ section.directors h2 {
 @media screen and (min-width: 1100px) {
   section.directors h2 {
     grid-column: 1/4;
+    margin-bottom: 6.4rem;
   }
 }
 section.directors .director-card {
@@ -1246,6 +1250,10 @@ section.directors .director-card__back .social-icons {
   justify-content: space-between;
   align-items: center;
 }
+section.directors .director-card__back .social-icons a:hover path {
+  cursor: pointer;
+  fill: var(--coral);
+}
 section.directors .director-card__button {
   width: 5.6rem;
   height: 5.6rem;
@@ -1275,7 +1283,6 @@ section.directors .director-card__button span {
 section.directors .director-card__button span:nth-child(2) {
   transform: translate(-50%, -50%) rotate(90deg);
 }
-
 section.directors .bg-img-container.top {
   width: 20rem;
   height: 20rem;
