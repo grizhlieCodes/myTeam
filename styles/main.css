@@ -199,10 +199,6 @@ body {
   margin: auto;
 }
 
-main {
-  overflow-x: hidden;
-}
-
 button {
   width: 15.3rem;
   height: 4.8rem;
@@ -874,6 +870,7 @@ section.home-testimonials {
   text-align: center;
   background: var(--jungle-green);
   position: relative;
+  overflow-x: hidden;
 }
 section.home-testimonials .bg-img-container.top {
   position: absolute;
@@ -1309,6 +1306,164 @@ section.directors .bg-img-container.bottom {
   section.directors .bg-img-container.bottom {
     right: 50%;
     transform: translate(calc(1440px / 2), 0%);
+  }
+}
+
+section.clients {
+  width: 100%;
+  height: 63.2rem;
+  padding-top: 8.8rem;
+  background: var(--state-green);
+  position: relative;
+  overflow-y: hidden;
+}
+@media screen and (min-width: 768px) {
+  section.clients {
+    height: 30.8rem;
+    padding-top: 10rem;
+  }
+}
+@media screen and (min-width: 1100px) {
+  section.clients {
+    height: 43.7rem;
+    padding-top: 14rem;
+  }
+}
+section.clients .bg-img-container {
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+}
+@media screen and (min-width: 768px) {
+  section.clients .bg-img-container {
+    transform: translate(0, -50%);
+  }
+}
+@media screen and (min-width: 1100px) {
+  section.clients .bg-img-container {
+    left: 50%;
+    transform: translate(calc(-1440px / 2), 0);
+  }
+}
+section.clients h2 {
+  text-align: center;
+  --h2-m-bottom: 6.4rem;
+  margin-bottom: var(--h2-m-bottom);
+}
+@media screen and (min-width: 768px) {
+  section.clients h2 {
+    --h2-m-bottom: 4.8rem;
+  }
+}
+@media screen and (min-width: 1100px) {
+  section.clients h2 {
+    --h2-m-bottom: 6.4rem;
+  }
+}
+section.clients .logo-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 3.9rem 1fr 3.9rem;
+  grid-auto-rows: 2.419rem;
+  row-gap: 5.7rem;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  section.clients .logo-container {
+    grid-template-columns: repeat(5, min-content);
+    grid-template-rows: 2.8rem;
+    grid-auto-rows: auto;
+    grid-auto-flow: column;
+    row-gap: 0;
+    column-gap: 4.9rem;
+  }
+}
+@media screen and (min-width: 1100px) {
+  section.clients .logo-container {
+    column-gap: 8rem;
+  }
+}
+section.clients .logo-container a {
+  grid-column: 2/3;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+@media screen and (min-width: 768px) {
+  section.clients .logo-container a {
+    grid-column: auto;
+  }
+}
+section.clients .logo-container a img {
+  margin: auto;
+  filter: red;
+}
+section.clients .logo-container a.verge img {
+  height: 2.419rem;
+}
+@media screen and (min-width: 768px) {
+  section.clients .logo-container a.verge img {
+    height: 1.7rem;
+  }
+}
+@media screen and (min-width: 1100px) {
+  section.clients .logo-container a.verge img {
+    height: 2.8rem;
+  }
+}
+section.clients .logo-container a.jakarta img {
+  height: 2.419rem;
+}
+@media screen and (min-width: 768px) {
+  section.clients .logo-container a.jakarta img {
+    height: 1.4rem;
+  }
+}
+@media screen and (min-width: 1100px) {
+  section.clients .logo-container a.jakarta img {
+    height: 2.3rem;
+  }
+}
+section.clients .logo-container a.guardian img {
+  height: 2.419rem;
+}
+@media screen and (min-width: 768px) {
+  section.clients .logo-container a.guardian img {
+    height: 1.7rem;
+  }
+}
+@media screen and (min-width: 1100px) {
+  section.clients .logo-container a.guardian img {
+    height: 2.8rem;
+  }
+}
+section.clients .logo-container a.techradar img {
+  height: 2.419rem;
+}
+@media screen and (min-width: 768px) {
+  section.clients .logo-container a.techradar img {
+    height: 1.7rem;
+  }
+}
+@media screen and (min-width: 1100px) {
+  section.clients .logo-container a.techradar img {
+    height: 2.8rem;
+  }
+}
+section.clients .logo-container a.gadgetsnow img {
+  height: 4rem;
+}
+@media screen and (min-width: 768px) {
+  section.clients .logo-container a.gadgetsnow img {
+    height: 2.8rem;
+  }
+}
+@media screen and (min-width: 1100px) {
+  section.clients .logo-container a.gadgetsnow img {
+    height: 4.5rem;
   }
 }
 
