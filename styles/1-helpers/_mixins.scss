@@ -41,14 +41,13 @@
 
 $mobile: 375;
 $tablet: 768;
-$desktop: 1100;
+$desktop: 1200;
 
 @function sizer($size){
   @return #{$size}px
 }
 
 @mixin mq($size) {
-
   @if ($size == tablet) {
     @media screen and (min-width: #{$tablet}px) {
       @content;
