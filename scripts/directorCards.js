@@ -37,7 +37,7 @@ const directors = [
     },
 ]
 
-const directorSection = document.querySelector('section.directors')
+const directorsGrid = document.querySelector('.directors-grid')
 
 directors.forEach(director => {
     let name = director.name
@@ -91,7 +91,7 @@ directors.forEach(director => {
             <span></span>
         </div>
     `
-    directorSection.append(article)
+    directorsGrid.append(article)
 })
 
 
@@ -99,10 +99,11 @@ const buttons = [...document.querySelectorAll('.director-card__button')]
 const directorBackCards = [...document.querySelectorAll('.director-card__back')]
 const directorFrontCards = [...document.querySelectorAll('.director-card__front')]
 
+
 buttons.forEach((button, index) => {
     let activeClass = 'active'
+
     button.addEventListener('click', () => {
-        
         button.classList.toggle(activeClass)
         directorBackCards[index].classList.toggle(activeClass)
         directorFrontCards[index].classList.toggle(activeClass)

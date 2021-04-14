@@ -72,23 +72,54 @@ section.about-hero
                 background: v(coral)
 
 section.directors
+    height: 206.2rem
+    position: relative
+    overflow: hidden
     background: v(jungle-green)
     padding: 8.8rem 2.4rem
-    @include flex(column nowrap, space-between, center)
+
+    @include mq(tablet)
+        height: 121.9rem
+
+    @include mq(desktop)
+        height: 100.2rem
+
+    .directors-grid
+        display: grid
+        grid-template-columns: 32.7rem
+        grid-auto-rows: 25.3rem
+        row-gap: 5.2rem
+        justify-content: center
+
+        @include mq(tablet)
+            grid-template-columns: repeat(2, 28.1rem)
+            column-gap: 1.1rem
+            row-gap: 4.8rem
+
+        @include mq(desktop)
+            grid-template-columns: repeat(3, 35rem)
+            grid-auto-flow: row
+
+section.directors
 
     h2
+        text-align: center
         margin-bottom: 4.8rem
 
+        @include mq(tablet)
+            grid-column: 1/3
+        @include mq(desktop)
+            grid-column: 1/4
+
     .director-card
-        width: 32.7rem
-        height: 28.1rem
+        width: 100%
+        height: 100%
         background: v(state-green)
         position: relative
         @include flex(column nowrap, space-between, center)
-        overflow-x: clip
-        margin-bottom: 5.2rem
 
-
+        @supports (overflow-x: clip)
+            overflow-x: clip
 
     .director-card__front
         margin-top: 3.2rem
@@ -96,11 +127,15 @@ section.directors
         width: 27.9rem
         height: 16.5rem
         opacity: 1
-        transition: transform cubic-bezier(.53,.24,.6,.93) 250ms, opacity cubic-bezier(.53,.24,.6,.93) 250ms
-
+        transition: transform cubic-bezier(.53,.24,.6,.93) 100ms, opacity cubic-bezier(.53,.24,.6,.93) 100ms
+        
         &.active
-            transform: translate(120%, 0)
+            transform: translate(20%, 0)
             opacity: 0
+
+        @supports (overflow-x: clip)
+            &.active
+                transform: translate(120%, 0)
 
         img
             width: 9.6rem
@@ -114,23 +149,28 @@ section.directors
 
         p
             font-style: italic
+            font-weight: 500
         
     .director-card__back
         height: 20rem
         position: absolute
-        left: -75%
+        left: 0%
         opacity: 0
         background: inherit
-        padding-top: 3.5rem
-        width: 100%
-        padding: 3.5rem 4.6rem 0
+        padding-top: 0.5rem
+        width: 23.5rem
+        margin-top: 3rem
         text-align: center
         @include flex(column nowrap, flex-start, center)
-        transition: all cubic-bezier(.53,.24,.6,.93) 250ms
+        transition: all cubic-bezier(.53,.24,.6,.93) 100ms
+
+        @supports (overflow-x: clip)
+            left: -75%
         
         &.active
             opacity: 1
-            left: 0
+            left: 50%
+            transform: translate(-50%, 0)
 
         h3
             margin-bottom: 0.8rem
@@ -138,7 +178,11 @@ section.directors
 
         p
             margin-bottom: 2.4rem
-
+        
+        .social-icons
+            width: 6rem
+            height: 2rem
+            @include flex(row nowrap, space-between, 0)
 
     .director-card__button
         width: 5.6rem
@@ -155,6 +199,7 @@ section.directors
 
         &.active
             transform: translate(0, 50%) rotate(225deg)
+            background: v(rapture-blue)
 
 
         span
@@ -168,3 +213,34 @@ section.directors
 
             &:nth-child(2)
                 transform: translate(-50%, -50%) rotate(90deg)
+
+
+section.directors   
+    .bg-img-container.top
+        width: 20rem
+        height: 20rem
+        position: absolute
+        left: 0
+        top: 0
+        transform: translate(-50%,-50%)
+
+        @include mq(tablet)
+            transform: translate(-50%, 0%)
+
+        @include mq(desktop)
+            left: 50%
+            transform: translate(calc(-1440px / 2 - 100px), 0%)
+
+    .bg-img-container.bottom
+        width: 14.7rem
+        height: 10rem
+        position: absolute
+        right: 0
+        bottom: 0
+
+        @include mq(desktop)
+            right: 50%
+            transform: translate(calc(1440px / 2), 0%)
+            
+
+        
