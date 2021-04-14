@@ -3,13 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <script type="module" src="../scripts/header.js"></script>
+  <script defer src="../scripts/navbar.js"></script>
+  <script type="module" src="../scripts/callToAction.js"></script>
+  <script type="module" src="../scripts/footer.js"></script>
+  <link rel="stylesheet" href="../styles/main.css">
   <title>Frontend Mentor | myteam website challenge - Contact</title>
 </head>
 <body>
-  <p>Testing contact page.</p>
+  <main class="contact">
+
+    <section class="form-container">
+      <div class="info-text">
+        <h1 class="small">Contact</h1>
+        <h2>Ask us about</h2>
+
+        <div class="asking-pointer">
+          <div class="img-container">
+            <img src="../assets/icon-person.svg" alt="person illustration">
+          </div>
+          <p class="body-1">
+            The quality of our talent network
+          </p>
+        </div>
+
+        <div class="asking-pointer">
+          <div class="img-container">
+            <img src="../assets/icon-cog.svg" alt="cog illustration">
+          </div>
+          <p class="body-1">
+            Usage & implementation of our software
+          </p>
+        </div>
+
+        <div class="asking-pointer">
+          <div class="img-container">
+            <img src="../assets/icon-chart.svg" alt="chart going up illustration">
+          </div>
+          <p class="body-1">
+            How we help drive innovation
+          </p>
+        </div>
+
+      </div>
+      <form action="">
+        <div class="input-container">
+          <label for="name"></label>
+          <input type="text" name="name" id="name">
+        </div>
+        <div class="input-container">
+          <label for="email"></label>
+          <input type="email" name="email" id="email">
+        </div>
+        <div class="input-container">
+          <label for="companyName"></label>
+          <input type="text" name="companyName" id="companyName">
+        </div>
+        <div class="input-container">
+          <label for="title"></label>
+          <input type="text" name="title" id="title">
+        </div>
+        <div class="textarea-container">
+          <label for="message"></label>
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        </div>
+        <button type="submit" class="button dark">submit</button>
+      </form>
+    </section>
+
+  </main>
   
 </body>
 </html>
