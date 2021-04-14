@@ -1,0 +1,170 @@
+@use '../1-helpers/mixins' as *
+    
+section.about-hero  
+    height: 39.2rem
+    @include grid('. text-container .')
+    text-align: center
+    position: relative
+    align-content: start
+    overflow: hidden
+
+    @include mq(tablet)
+        height: 38rem
+
+    @include mq(desktop)
+        height: 32.3rem
+        grid-template-areas: ". . text-container . ."
+        text-align: left
+
+section.about-hero
+
+    .bg-img-container
+        width: 20rem
+        height: 20rem
+        position: absolute
+        bottom: 0
+        right: 0
+        transform: translate(50%, 50%)
+
+        @include mq(tablet)
+            transform: translate(50%, 0%)
+        
+        @include mq(desktop)
+            grid-column: 4/5
+
+
+    .text-container
+        grid-area: text-container
+        @include flex(column nowrap, flex-start, center)
+        margin-top: 3.2rem
+
+        @include mq(tablet)
+            margin-top: 4.8rem
+
+        @include mq(desktop)
+            @include eflex(row nowrap, space-between, start)
+            height: 15.6rem
+
+    h1
+        margin-bottom: 1.6rem
+
+        @include mq(tablet)
+            margin-bottom: 2.4rem
+        @include mq(desktop)
+            margin-bottom: 0
+            line-height: 10rem
+
+    .info-text-container
+        width: 100%
+        max-width: 45.7rem
+
+
+        @include mq(desktop)
+            height: 15.6rem
+            flex: 1 0 auto
+            max-width: 73rem
+            @include flex(column nowrap, space-between, start)
+
+            span
+                display: block
+                width: 5rem
+                height: 0.4rem
+                background: v(coral)
+
+section.directors
+    background: v(jungle-green)
+    padding: 8.8rem 2.4rem
+    @include flex(column nowrap, space-between, center)
+
+    h2
+        margin-bottom: 4.8rem
+
+    .director-card
+        width: 32.7rem
+        height: 28.1rem
+        background: v(state-green)
+        position: relative
+        @include flex(column nowrap, space-between, center)
+        overflow-x: clip
+        margin-bottom: 5.2rem
+
+
+
+    .director-card__front
+        margin-top: 3.2rem
+        @include flex(column nowrap, flex-start, center)
+        width: 27.9rem
+        height: 16.5rem
+        opacity: 1
+        transition: transform cubic-bezier(.53,.24,.6,.93) 250ms, opacity cubic-bezier(.53,.24,.6,.93) 250ms
+
+        &.active
+            transform: translate(120%, 0)
+            opacity: 0
+
+        img
+            width: 9.6rem
+            height: 9.6rem
+            border-radius: 50%
+            border: 2px solid #C4FFFE
+            margin-bottom: 1.4rem
+
+        h3
+            color: v(rapture-blue)
+
+        p
+            font-style: italic
+        
+    .director-card__back
+        height: 20rem
+        position: absolute
+        left: -75%
+        opacity: 0
+        background: inherit
+        padding-top: 3.5rem
+        width: 100%
+        padding: 3.5rem 4.6rem 0
+        text-align: center
+        @include flex(column nowrap, flex-start, center)
+        transition: all cubic-bezier(.53,.24,.6,.93) 250ms
+        
+        &.active
+            opacity: 1
+            left: 0
+
+        h3
+            margin-bottom: 0.8rem
+            color: v(rapture-blue)
+
+        p
+            margin-bottom: 2.4rem
+
+
+    .director-card__button
+        width: 5.6rem
+        height: 5.6rem
+        background: v(coral)
+        border-radius: 50%
+        position: relative
+        transform: translate(0, 50%)
+        transition: background 250ms cubic-bezier(.53,.24,.6,.93), transform 250ms cubic-bezier(.53,.24,.6,.93)
+        cursor: pointer
+        
+        &:hover
+            background: v(rapture-blue)
+
+        &.active
+            transform: translate(0, 50%) rotate(225deg)
+
+
+        span
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%) rotate(0)
+            height: 0.4rem
+            width: 1.6rem
+            background: v(state-green)
+
+            &:nth-child(2)
+                transform: translate(-50%, -50%) rotate(90deg)

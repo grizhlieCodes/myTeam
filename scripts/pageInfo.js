@@ -6,12 +6,6 @@ title = pageTitle[pageTitle.length - 1]
 
 let directory = title == 'homepage' ? './' : '../'
 
-
-
-
-
-
-
 if(title.includes('homepage')){
     home = `${directory}index.html`
     about = `${directory}pages/about.html`
@@ -38,35 +32,6 @@ const pageInfo = {
     ctaImg,
     title
 }
-
-console.log(`
-    Project structure:
-    index.html
-    -pages
-    --about.html
-    --contact.html
-
-    Therefore:
-    Whilst on homepage, targetting about:
-    ./pages/about.html
-
-    Otherwise:
-    if we are in:
-    -pages
-    --about.html
-    
-    Whilst on about, targetting index:
-    ../index.html
-
-    main focus is on ./ and ../
-`)
-
-console.log(`
-    Page title: ${title}
-    Page dir: ${directory}
-    pageInfoObject below:
-`)
-console.log(pageInfo)
 
 export default pageInfo
 
