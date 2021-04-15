@@ -39,7 +39,7 @@ let footerHTML = `
                 0-6.628-5.373-12-12-12z"/>
             </svg>
         </a>
-        <a href="https://www.pinterest.com/" target="_blank" class="icon-container twitter">
+        <a href="https://twitter.com/?lang=en-gb" target="_blank" class="icon-container twitter">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20"><path fill="#FFF"
                 d="M24 2.557a9.83 9.83 0 01-2.828.775A4.932 4.932 0 0023.337.608a9.864 9.864 0
                 01-3.127 1.195A4.916 4.916 0 0016.616.248c-3.179 0-5.515 2.966-4.797

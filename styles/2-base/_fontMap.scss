@@ -72,7 +72,7 @@ $fonts: (
     "p.body-1": (
         "font-family": $font-family,
         "color": v(white),
-        "font-size": clamp(1.5rem, 1rem + 0.65vw, 1.8rem),
+        "font-size": 1.8rem,
         "line-height": 2.8rem,
         "font-weight": 600
     ),
@@ -92,7 +92,35 @@ $fonts: (
         "line-height": 1.8rem,
         "font-weight": 500
     ),
-
+    "input": (
+        "font-family": $font-family,
+        "color": v(white),
+        "font-size": 1.5rem,
+        "line-height": 2.5rem,
+        "font-weight": 600
+    ),
+    "label": (
+        "font-family": $font-family,
+        "color": v(white),
+        "font-size": 1.5rem,
+        "line-height": 2.5rem,
+        "font-weight": 600
+    ),
+    "textarea": (
+        "font-family": $font-family,
+        "color": v(white),
+        "font-size": 1.5rem,
+        "line-height": 2.5rem,
+        "font-weight": 600
+    ),
+    "p.error-message": (
+        "font-family": $font-family,
+        "font-style": italic,
+        "color": v(coral),
+        "font-size": 1.1rem,
+        "line-height": auto,
+        "font-weight": bold
+    ),
     "a": (
         "font-family": $font-family,
         "color": v(white),

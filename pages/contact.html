@@ -1,78 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
-  <script type="module" src="../scripts/header.js"></script>
-  <script defer src="../scripts/navbar.js"></script>
-  <script type="module" src="../scripts/callToAction.js"></script>
-  <script type="module" src="../scripts/footer.js"></script>
-  <link rel="stylesheet" href="../styles/main.css">
-  <title>Frontend Mentor | myteam website challenge - Contact</title>
-</head>
-<body>
-  <main class="contact">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+        <script type="module" src="../scripts/header.js"></script>
+        <script defer src="../scripts/navbar.js"></script>
+        <script type="module" src="../scripts/callToAction.js"></script>
+        <script type="module" src="../scripts/footer.js"></script>
+        <script type="module" src="../scripts/formValidation.js"></script>
+        <link rel="stylesheet" href="../styles/main.css">
+        <title>Frontend Mentor | myteam website challenge - Contact</title>
+    </head>
+    <body>
+        <main class="contact">
 
-    <section class="form-container">
-      <div class="info-text">
-        <h1 class="small">Contact</h1>
-        <h2>Ask us about</h2>
+            <section class="form-container">
+                <div class="info-text">
+                    <h1 class="small">Contact</h1>
+                    <h2>Ask us about</h2>
 
-        <div class="asking-pointer">
-          <div class="img-container">
-            <img src="../assets/icon-person.svg" alt="person illustration">
+                    <div class="asking-pointer">
+                        <div class="img-container">
+                            <img src="../assets/icon-person.svg" alt="person illustration">
+                        </div>
+                        <p class="body-1">
+                            The quality of our talent network
+                        </p>
+                    </div>
+
+                    <div class="asking-pointer">
+                        <div class="img-container">
+                            <img src="../assets/icon-cog.svg" alt="cog illustration">
+                        </div>
+                        <p class="body-1">
+                            Usage & implementation of our software
+                        </p>
+                    </div>
+
+                    <div class="asking-pointer">
+                        <div class="img-container">
+                            <img src="../assets/icon-chart.svg" alt="chart going up illustration">
+                        </div>
+                        <p class="body-1">
+                            How we help drive innovation
+                        </p>
+                    </div>
+
+                </div>
+                <form action="">
+                    <div class="form-item checkValidity">
+                        <input type="text" name="name" id="name" placeholder=" "
+                        autocomplete="off">
+                        <label for="name">name*</label>
+                        <span></span>
+                        <p class="error-message"></p>
+                    </div>
+                    <div class="form-item checkValidity">
+                        <input type="email" name="email" id="email"
+                        placeholder=" " autocomplete="off">
+                        <label for="email">email*</label>
+                        <span></span>
+                        <p class="error-message"></p>
+                    </div>
+                    <div class="form-item">
+                        <input type="text" name="companyName" id="companyName"
+                        placeholder=" " autocomplete="off">
+                        <label for="companyName" class="companyName">company</label>
+                        <span></span>
+                    </div>
+                    <div class="form-item">
+                        <input type="text" name="title" id="title" placeholder="
+                        " autocomplete="off">
+                        <label for="title">title</label>
+                        <span></span>
+                    </div>
+                    <div class="form-item">
+                        <textarea name="message" id="message" cols="30"
+                         placeholder=" fdsfadsfad" autocomplete="off"></textarea>
+                        <label class="textarea-label" for="message">message</label>
+                        <span></span>
+                    </div>
+                    <button type="submit" class="button dark">submit</button>
+                </form>
+
+                
+              </section>
+
+        </main>
+
+        <div class="contact-modal">
+          <div class="inner-container">
+            <div class="text-container">
+              <h2>Thanks!</h2>
+              <h3 class="modal-message">Message received Andy! We'll get back to you asap.</h3>
+              <button class="primary light modal-button">Close!</button>
+            </div>
+            <div class="bg-img-container">
+              <img src="../assets/bg-pattern-about-2-contact-1.svg" alt="">
+            </div>
           </div>
-          <p class="body-1">
-            The quality of our talent network
-          </p>
+          <div class="overlay"></div>
         </div>
-
-        <div class="asking-pointer">
-          <div class="img-container">
-            <img src="../assets/icon-cog.svg" alt="cog illustration">
-          </div>
-          <p class="body-1">
-            Usage & implementation of our software
-          </p>
-        </div>
-
-        <div class="asking-pointer">
-          <div class="img-container">
-            <img src="../assets/icon-chart.svg" alt="chart going up illustration">
-          </div>
-          <p class="body-1">
-            How we help drive innovation
-          </p>
-        </div>
-
-      </div>
-      <form action="">
-        <div class="input-container">
-          <label for="name"></label>
-          <input type="text" name="name" id="name">
-        </div>
-        <div class="input-container">
-          <label for="email"></label>
-          <input type="email" name="email" id="email">
-        </div>
-        <div class="input-container">
-          <label for="companyName"></label>
-          <input type="text" name="companyName" id="companyName">
-        </div>
-        <div class="input-container">
-          <label for="title"></label>
-          <input type="text" name="title" id="title">
-        </div>
-        <div class="textarea-container">
-          <label for="message"></label>
-          <textarea name="message" id="message" cols="30" rows="10"></textarea>
-        </div>
-        <button type="submit" class="button dark">submit</button>
-      </form>
-    </section>
-
-  </main>
-  
-</body>
+    </body>
 </html>
