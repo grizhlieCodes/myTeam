@@ -1,6 +1,7 @@
 @use '../1-helpers/mixins' as *
 
 main.contact 
+    overflow: hidden
     height: 100.4rem
 
     @include mq(tablet)
@@ -10,14 +11,51 @@ main.contact
         height: 59.5rem
     
 section.form-container
+    height: 100%
     position: relative
     max-width: 111rem
-    margin: auto
 
     @include mq(desktop)
         @include flex(row nowrap, space-between, start)
-        margin-top: 4.7rem
+        margin: auto
         
+    .bg-img-container
+        position: absolute
+        
+        transition: all 250ms ease
+
+        img
+            width: 100%
+            height: 100%
+
+        &.top
+            top: 0
+            left: 0
+            display: none
+
+            @include mq(tablet)
+                display: block
+                left: 50%
+                transform: translate(calc(-76.5rem / 2 - 10rem), 0)
+            @include mq(desktop)
+                transform: translate(calc(-144rem / 2 - 10rem), 0)
+
+        
+        &.bottom
+            width: 20rem
+            height: 22.5rem
+            bottom: 3.2rem
+            right: 0
+            transform: translate(50%, 50%)
+
+            @include mq(tablet)
+                bottom: 4.8rem
+                transform: translate(50%, 0rem)
+
+            @include mq(desktop)
+                bottom: 0
+                right: -6.4rem
+                transform: translate(100%, 0rem)
 
     .info-text
         width: 32.7rem
@@ -71,6 +109,12 @@ section.form-container
 
 form
     @include flex(column nowrap, flex-start,center)
+    width: 100%
+    max-width: 32.7rem
+    margin: auto
+
+    @include mq(tablet)
+        max-width: 54.2rem
 
     input,
     textarea
@@ -116,6 +160,7 @@ form
 
             &.error
                 background: v(coral)
+                transform: scaleX(1)
 
         &:focus-within span
             transform: scaleX(1)
@@ -126,7 +171,6 @@ form
             display: block
             color: v(white)
             height: 4.2rem
-            margin-bottom: 1rem
             padding-left: $p-l
         
         input
@@ -136,10 +180,10 @@ form
                 color: #99B8BB
 
             &:focus-within + label
-                transform: scale(0.7, 0.7) translate(-7rem, 0rem)
+                transform: scale(0.7, 0.7) translate(-7rem, 1.3rem)
 
                 &.companyName
-                    transform: scale(0.7, 0.7) translate(-10rem, 0rem)
+                    transform: scale(0.7, 0.7) translate(-10rem, 1.3rem)
 
             &:not(:placeholder-shown):not(:focus-within) + label
                 opacity: 0
@@ -152,7 +196,7 @@ form
             height: 8.4rem 
 
             &:focus-within + label
-                transform: scale(0.7, 0.7) translate(-2rem, -10rem)
+                transform: scale(0.7, 0.7) translate(-2rem, -9rem)
 
             &:not(:placeholder-shown):not(:focus-within) + label.textarea-label
                 opacity: 0
@@ -168,6 +212,9 @@ form
             left: $p-l
             transition: transform 150ms ease-in-out
             color: #99B8BB
+        
+    button
+        align-self: flex-start
 
 .contact-modal
     @include abCenter(absolute)
