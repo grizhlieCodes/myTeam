@@ -216,11 +216,6 @@ a:hover {
   color: var(--coral);
 }
 
-a::before {
-  content: "";
-  background: var(--white);
-}
-
 body {
   background: var(--midnight-green);
   min-width: 37.5rem;
@@ -232,7 +227,7 @@ body {
   margin: auto;
 }
 
-button {
+button, a.button {
   width: 15.3rem;
   height: 4.8rem;
   font-family: "Livvic", sans-serif;
@@ -242,36 +237,38 @@ button {
   border-radius: 2.4rem;
   transition: all 400ms ease;
   border: none;
+  display: grid;
+  place-items: center;
 }
-button:disabled {
+button:disabled, a.button:disabled {
   opacity: 0.25;
 }
-button:hover {
+button:hover, a.button:hover {
   cursor: pointer;
 }
-button.primary.light {
+button.primary.light, a.button.primary.light {
   border: 2px solid var(--white);
   background: transparent;
   color: var(--white);
 }
-button.primary.light:hover:not(:disabled) {
+button.primary.light:hover:not(:disabled), a.button.primary.light:hover:not(:disabled) {
   background: var(--white);
   color: var(--state-green);
 }
-button.primary.dark {
+button.primary.dark, a.button.primary.dark {
   border: 2px solid var(--state-green);
   color: var(--state-green);
   background: transparent;
 }
-button.primary.dark:hover:not(:disabled) {
+button.primary.dark:hover:not(:disabled), a.button.primary.dark:hover:not(:disabled) {
   background: var(--state-green);
   color: var(--white);
 }
-button.secondary {
+button.secondary, a.button.secondary {
   background: var(--white);
   color: var(--state-green);
 }
-button.secondary:hover:not(:disabled) {
+button.secondary:hover:not(:disabled), a.button.secondary:hover:not(:disabled) {
   background: var(--rapture-blue);
 }
 
@@ -558,7 +555,7 @@ footer .inner-container {
     height: 10rem;
     align-content: start;
     justify-content: start;
-    grid-template-columns: 20rem 1fr 1fr;
+    grid-template-columns: 28.5rem 1fr 1fr;
     grid-template-rows: 4rem 6rem;
     grid-template-areas: "logo info socialIcons" "nav info copyright";
   }
@@ -567,6 +564,11 @@ footer .inner-container {
 footer .inner-container img#logo {
   grid-area: logo;
   width: 9.597rem;
+}
+@media screen and (min-width: 1200px) {
+  footer .inner-container img#logo {
+    width: 16rem;
+  }
 }
 @media screen and (min-width: 1200px) {
   footer .inner-container nav {
@@ -885,6 +887,7 @@ section.home-features .flex-container .feature-card .img-container {
 @media screen and (min-width: 768px) {
   section.home-features .flex-container .feature-card .img-container {
     margin-right: 2.3rem;
+    align-self: start;
   }
 }
 section.home-features .flex-container .feature-card h3 {
@@ -950,7 +953,7 @@ section.home-testimonials .header-container span {
   section.home-testimonials .header-container {
     height: 9.6rem;
     margin-bottom: 5.6rem;
-    max-width: 111rem;
+    max-width: 93.2rem;
   }
 }
 section.home-testimonials .testimonials {
@@ -993,6 +996,9 @@ section.home-testimonials .testimonials .testimonial:not(:nth-last-child(1)) {
     width: 35rem;
   }
 }
+section.home-testimonials .testimonials .testimonial {
+  position: relative;
+}
 section.home-testimonials .testimonials .testimonial .main-text-container {
   height: 13.6rem;
   display: flex;
@@ -1006,7 +1012,9 @@ section.home-testimonials .testimonials .testimonial .main-text-container .quota
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
-  z-index: -1;
+}
+section.home-testimonials .testimonials .testimonial .main-text-container .quote {
+  z-index: 1;
 }
 section.home-testimonials .testimonials .testimonial h3.name {
   color: var(--rapture-blue);

@@ -177,6 +177,7 @@ section.home-features
 
                 @include mq(tablet)
                     margin-right: 2.3rem
+                    align-self: start
 
             h3 
                 color: v(coral)
@@ -236,7 +237,7 @@ section.home-testimonials
         @include mq(desktop)
             height: 9.6rem
             margin-bottom: 5.6rem
-            max-width: 111rem
+            max-width: 93.2rem
 
     .testimonials
         width: 32.7rem
@@ -268,6 +269,7 @@ section.home-testimonials
 
        
         .testimonial
+            position: relative
 
             .main-text-container
                 height: 13.6rem
@@ -279,7 +281,9 @@ section.home-testimonials
                     position: absolute
                     left: 50%
                     transform: translate(-50%,0)
-                    z-index: -1
+
+                .quote
+                    z-index: 1
       
             h3.name
                 color: v(rapture-blue)

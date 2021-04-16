@@ -4,7 +4,7 @@ import pageInfo from './pageInfo.js'
 let headerBlock = `
     <div class="header-inner-width-container ${pageInfo.title}">
       <div class="logo-container">
-        <img src="${pageInfo.logo}">
+        <img src="${pageInfo.logo}" alt="my team logo">
       </div>
       <div class="nav-burger-button" data-clicked="false">
         <div class="nav-button-line"></div>
