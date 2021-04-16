@@ -1007,6 +1007,16 @@ section.home-testimonials .testimonials .testimonial .main-text-container {
   align-items: center;
   margin-bottom: 1.3rem;
 }
+@media screen and (min-width: 768px) {
+  section.home-testimonials .testimonials .testimonial .main-text-container {
+    margin-bottom: 1.6rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  section.home-testimonials .testimonials .testimonial .main-text-container {
+    margin-bottom: 2.4rem;
+  }
+}
 section.home-testimonials .testimonials .testimonial .main-text-container .quotation-mark {
   top: 0;
   position: absolute;
