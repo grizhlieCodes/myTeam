@@ -16,8 +16,8 @@ let headerBlock = `
           <a href="${pageInfo.home}">home</a>
           <a href="${pageInfo.about}">about</a>
         </div>
-        <a href="${pageInfo.contact}">
-          <button class="primary light">contact us</button>
+        <a href="${pageInfo.contact}" class="button primary light">
+          contact us
         </a>
         <div class="img-container">
           <img src="${pageInfo.navImg}" alt="abstract

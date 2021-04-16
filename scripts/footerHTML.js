@@ -1,5 +1,12 @@
 import pageInfo from './pageInfo.js'
 
+const firstName = 'facebook'
+const firstLink = 'https://en-gb.facebook.com/'
+const secondName = 'pinterest'
+const secondLink = 'https://www.pinterest.com/'
+const thirdName = 'twitter'
+const thirdLink = 'https://twitter.com/?lang=en-gb'
+
 let footerHTML = `
     <div class="inner-container">
     <div class="logo-container">
@@ -16,16 +23,18 @@ let footerHTML = `
         <p class="number body-2">Call Us : 949-833-7432</p>
     </div>
     <div class="social-media-icons">
-        <a href="https://en-gb.facebook.com/" target="_blank" class="icon-container facebook" id="facebook-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="#FFF" d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325
+        <a href="${firstLink}" target="_blank" class="icon-container ${firstName}" id="${firstName}-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"> <title>${firstLink} link icon</title>
+            <path fill="#FFF" d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325
                 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0
                 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795
                 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593
                 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/>
             </svg>
         </a>
-        <a href="https://www.pinterest.com/" target="_blank" class="icon-container pinterest" id="pinterest-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="#FFF"
+        <a href="${secondLink}" target="_blank" class="icon-container ${secondName}" id="${secondName}-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"> <title>${secondName} link icon
+            </title><path fill="#FFF"
                 d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627
                 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965
                 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0
@@ -39,8 +48,10 @@ let footerHTML = `
                 0-6.628-5.373-12-12-12z"/>
             </svg>
         </a>
-        <a href="https://twitter.com/?lang=en-gb" target="_blank" class="icon-container twitter" id="twitter-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20"><path fill="#FFF"
+        <a href="${thirdLink}" target="_blank" class="icon-container ${thirdName}" id="${thirdName}-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20"> <title>${thirdName} link icon</title>
+                
+            <path fill="#FFF"
                 d="M24 2.557a9.83 9.83 0 01-2.828.775A4.932 4.932 0 0023.337.608a9.864 9.864 0
                 01-3.127 1.195A4.916 4.916 0 0016.616.248c-3.179 0-5.515 2.966-4.797
                 6.045A13.978 13.978 0 011.671 1.149a4.93 4.93 0 001.523 6.574 4.903 4.903 0
